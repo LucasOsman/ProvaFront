@@ -1,0 +1,59 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            required
+            [(ngModel)]="livro.nome"
+            name="nome"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="autor">Autor</label>
+          <input
+            class="form-control"
+            id="autor"
+            required
+            [(ngModel)]="livro.autor"
+            name="autor"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="genero">Genero</label>
+            <input
+              class="form-control"
+              id="genero"
+              required
+              [(ngModel)]="livro.genero"
+              name="genero"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="quantidadeFolhas">Quantidade de Folhas</label>
+            <input
+              class="form-control"
+              id="quantidadeFolhas"
+              required
+              [(ngModel)]="livro.quantidadeFolhas"
+              name="quantidadeFolhas"
+              type = "number"
+            />
+          </div>
+  
+        <button (click)="save()" class="btn btn-success">Criar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Criado com sucesso!</h4>
+        <button class="btn btn-success" (click)="create()">Criar de novo aqui clique</button>
+      </div>
+    </div>
+  </div>

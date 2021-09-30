@@ -1,0 +1,19 @@
+<div class="list row">
+    <div class="col-md-12">
+      <h4>Lista de livros</h4>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Autor</th>
+          <th>Genero</th>
+          <th>Quantidade Folhas</th>
+        </tr>
+        <tr *ngFor="let livro of livros; let i = index">
+          <td>{{ livro.nome }}</td>
+          <td>{{ livro.autor }}</td>
+          <td>{{ livro.genero }}</td>
+          <td>{{ livro.quantidadeFolhas }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
