@@ -22,11 +22,9 @@ export class ListLivroComponent implements OnInit {
       .subscribe(
         data => {
           this.livros = data.data;
-          console.log(data);
         },
         error => {
           console.log(error);
         });
   }
-
 }

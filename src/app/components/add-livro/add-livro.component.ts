@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LivroService } from 'src/app/services/livro.service';
 
 @Component({
@@ -13,9 +14,10 @@ export class AddLivroComponent implements OnInit {
     autor: '',
     quantidadeFolhas: 0
   };
-  submitted = false;
 
-  constructor(private livroService: LivroService) { }
+  constructor(private livroService: LivroService, 
+    private router : Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -32,21 +34,10 @@ export class AddLivroComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.submitted = true;
+          this.router.navigate(["/list"], { relativeTo: this.route });
         },
         error => {
           console.log(error);
         });
-  }
-
-  create(): void {
-    this.submitted = false;
-    this.livro = {
-      nome: '',
-      genero: '',
-      autor: '',
-      quantidadeFolhas: 0
-    };
-  }
-  
+  }  
 }
